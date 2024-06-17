@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tab_box">
+            <button class="tab_btn ">Objetivo</button>
+            <button class="tab_btn">Custos</button>
+            <button class="tab_btn">Patrocínios</button>
+            <div class="line"></div>
+        </div>
+        <div class="content_box">
+            <div class="content ">
+                <h2>Objetivo</h2>
+                <p>
+                    O site tem como objetivo auxiliar nossos usuários, formulando questões com finalidade
+                        de facilitar aos interessados a percepção de quais atividades offlines eles mais
+                        se identificam ou sentem vontade de experimentar, os ajudando a descobrir novas 
+                        formas de ocupação fora das telas.
+                </p>
+            </div>
+
+            <div class="content">
+                <h2>Custos</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consequuntur blanditiis corrupti vel fuga reiciendis perspiciatis, laboriosam quod? Provident ad commodi nesciunt. Ullam quos aspernatur earum voluptatum qui, officia voluptate.
+                </p>
+            </div>
+
+            <div class="content">
+                <h2>Patrocínios</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consequuntur blanditiis corrupti vel fuga reiciendis perspiciatis, laboriosam quod? Provident ad commodi nesciunt. Ullam quos aspernatur earum voluptatum qui, officia voluptate.
+                </p>
+            </div>
+        </div>
+    </div>  
+    <script>
+        const tabs= document.querySelectorAll('.tab_btn');
+        const all_content= document.querySelectorAll('.content');
+
+        tabs.forEach((tab, index)=>{
+            tab.addEventListener('click', (e)=>{
+                tabs.forEach(tab=>{tab.classList.remove('active')});
+                tab.classList.add('active');
+
+                var line=document.querySelector('.line')
+            line.style.width = e.target.offsetWidth + "px";
+            line.style.left = e.target.offsetLeft + "px";
+
+            all_content.forEach(content=>{content.classList.remove('active')});
+            all_content[index].classList.add('active');
+            })
+        })
+    </script>
+</body>
+</html>
